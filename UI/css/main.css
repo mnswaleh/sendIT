@@ -1,3 +1,4 @@
+/* body background and height*/
 body{
     background-image: linear-gradient(white, rgb(45, 167, 126), white);
     min-height: 40%;
@@ -7,20 +8,30 @@ body{
     margin-top: 20%;
     margin-right: 20%;
     font-size: 24px;
+}
+
+.right_item{
     float: right;
+    margin-bottom: 5px;
 }
 
 #btn_auth{
     margin-bottom: 20px;
-    float: right;
 }
 
 .btn_all{
+    text-decoration: none;
+    color: black;
     background-image: linear-gradient(white, rgb(0, 204, 255) 80%, white);
     padding: 10px;
     border-radius: 13%;
     border:  1px solid rgb(0, 204, 255);
     font-size: 18px;
+}
+
+.btn_submit{
+    background-image: linear-gradient(white, rgb(9, 218, 120) 80%, white);
+    border:  1px solid rgb(9, 218, 120);
 }
 
 .btn_all:hover{
@@ -30,9 +41,53 @@ body{
     cursor: pointer;
 }
 
+.btn_submit:hover{
+    background-color: rgb(9, 218, 120);
+}
+
 .txt_big{
     font-size: 4em;
     font-weight: bolder;
+}
+
+#top_content{
+    margin-top: 10%;
+    text-align: center;
+}
+
+#bottom_content{
+    margin-top: 20px;
+    border: 2px solid rgb(0, 204, 255);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+#bottom_content form{
+    padding: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 50px;
+}
+
+.form_inputs{
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.form_inputs input{
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4%;
+    border:  1px solid rgb(72, 78, 80);
+}
+
+.form_inputs input:hover{
+    border:  1px solid rgb(0, 204, 255);
 }
 
 .page_footer{
