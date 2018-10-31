@@ -1,0 +1,32 @@
+body{
+    background-image: linear-gradient(white, aqua, white);
+    min-height: 40%;
+}
+
+#welcome_message{
+    margin-top: 20%;
+    margin-right: 20%;
+    font-size: 24px;
+    float: right;
+}
+
+#btn_auth{
+    margin-bottom: 20px;
+    float: right;
+}
+
+.txt_big{
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+.page_footer{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(45, 167, 126);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin: 0px;
+}
