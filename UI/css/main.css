@@ -4,8 +4,13 @@ body{
     min-height: 40%;
 }
 .page_header{
+    padding-top: 20px;
     font-size: 5em;
     text-align: center;
+}
+
+.page_header .btn_cancel{
+    margin-top: 35px;
 }
 
 .page_title{
