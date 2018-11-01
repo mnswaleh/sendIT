@@ -4,7 +4,6 @@ body{
     min-height: 40%;
 }
 .page_header{
-    padding-top: 20px;
     font-size: 5em;
     text-align: center;
 }
@@ -13,13 +12,16 @@ body{
     margin-top: 35px;
 }
 
+.dot{
+    color: rgb(215, 248, 250);
+}
+
 .page_title{
     font-size: 4em;
     margin-top: 25px;
     text-align: center;
     font-weight: bold;
 }
-
 
 #welcome_message{
     margin-top: 20%;
