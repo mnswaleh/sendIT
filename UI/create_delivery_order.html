@@ -1,0 +1,73 @@
+<!doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SendIT Create Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/fontawesome-all.min.css" />
+</head>
+
+<body>
+    <div class="main_content">
+        <div class="page_header">
+            <a href="delivery_orders.html" class="btn_all"><span class="fa fa-university"></span> HOME</a>
+            <a href="user_profile.html" class="btn_all"><span class="fa fa-user"></span> PROFILE</a>
+            <a href="index.html" class="btn_all btn_cancel right_item"><span class="fa fa-power-off"></span> LOGOUT</a>
+            <hr />
+        </div>
+        <div class="page_title">Create Delivery Order</div>
+        <div id="bottom_content">
+            <form action="#">
+                <div class="form_inputs">
+                    <label for="order_number">Order Number:</label><br />
+                    <input type="text" placeholder="67892030" name="order_number" disabled="disabled" />
+                </div>
+                <div class="form_inputs">
+                    <label for="prive">Price:</label><br />
+                    <input type="text" placeholder="0.00" name="Price" disabled="disabled" />
+                </div>
+                <div class="form_inputs">
+                    <label for="weight">Est Weight(Kg):</label><br />
+                    <input type="text" placeholder="Estimated weight" name="weight" />
+                </div>
+                <div class="form_inputs">
+                    <label for="pick_location">Pick Up Location:</label><br />
+                    <select name="pick_location">
+                        <option>Nyeri</option>
+                        <option>Kisumu</option>
+                        <option>Mombasa</option>
+                        <option>Kitale</option>
+                        <option>Eldoret</option>
+                    </select>
+                </div>
+                <div class="form_inputs">
+                    <label for="delivery_location">Delivery Location:</label><br />
+                    <select name="delivery_location">
+                        <option>Nyeri</option>
+                        <option>Kisumu</option>
+                        <option>Mombasa</option>
+                        <option>Kitale</option>
+                        <option>Eldoret</option>
+                    </select>
+                </div>
+                <div class="form_inputs">
+                    <button type="submit" class="btn_all btn_submit right_item">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="page_footer">
+        <h4><u>CONTACT US</u></h4>
+        P.O BOX 1078-0100,<br />
+        NAIROBI<br />
+        EMAIL: info@sendit.com<br />
+        PHONE: 022713541<br />
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</body>
+
+</html>
