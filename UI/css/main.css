@@ -101,6 +101,7 @@ body{
 }
 
 .main_content table{
+    font-size: 20px;
     border: 2px solid rgb(0, 204, 255);
     background-color: rgb(183, 231, 215);
     margin-left: auto;
