@@ -1,9 +1,14 @@
 /* body background and height*/
-body{
+html{
     position: relative;
-    background-image: linear-gradient(white, rgb(45, 167, 126), white);
     height: 100%;
+    padding-bottom: 20px;
 }
+
+body{
+    background-image: linear-gradient(white, rgb(45, 167, 126), white);
+}
+
 .page_header{
     font-size: 5em;
     text-align: center;
@@ -99,6 +104,10 @@ body{
 .txt_big{
     font-size: 4em;
     font-weight: bolder;
+}
+
+.error_feedback{
+    color: rgb(236, 3, 3);
 }
 
 .main_content table{
