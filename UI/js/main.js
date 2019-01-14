@@ -1,4 +1,4 @@
-const SERVER = "http://127.0.0.1:5000/api/v2/";
+const SERVER = "https://api-sendit.herokuapp.com/api/v2/";
 
 let params = new URLSearchParams(location.search);
 let access_token = localStorage.getItem('token');
