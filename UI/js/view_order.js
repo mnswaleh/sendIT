@@ -50,9 +50,9 @@ document.getElementById("order_cancel").onclick = function () {
             }
         }).then(function (myresponse) {
             if (myresponse.message) {
-                alert(myresponse.message)
+                alert(myresponse.message);
             } else if (myresponse.ERROR) {
-                alert(myresponse.ERROR)
+                alert(myresponse.ERROR);
             } else if (myresponse.status == "canceled") {
                 location.reload(true);
             }

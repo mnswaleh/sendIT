@@ -15,46 +15,38 @@
         <div class="page_header">
             <a href="delivery_orders.html" class="btn_all"><span class="fa fa-university"></span> HOME</a>
             <a href="user_profile.html" class="btn_all active"><span class="fa fa-user"></span> PROFILE</a>
-            <a href="index.html" class="btn_all btn_cancel right_item"><span class="fa fa-power-off"></span> LOGOUT</a>
+            <a href="#" class="btn_all btn_cancel right_item" id="btn_logout" onclick="logout()"><span class="fa fa-power-off"></span> LOGOUT</a>
             <hr />
         </div>
         <div class="page_title"><span class="fa fa-user"></span> User Profile</div>
         <table class="tbl_left">
             <tr>
                 <th scope="row">Username</th>
-                <td>mchokozi</td>
+                <td id="user_name">_</td>
             </tr>
             <tr>
                 <th scope="row">Full Name</th>
-                <td>Musa Juma</td>
+                <td id="full_name">_</td>
             </tr>
             <tr>
                 <th scope="row">Gender</th>
-                <td>Male</td>
+                <td id="gender">_</td>
             </tr>
             <tr>
                 <th scope="row">Email</th>
-                <td>mwananchi@kenya.com</td>
+                <td id="email">_</td>
             </tr>
             <tr>
                 <th scope="row">Total Delivery Orders</th>
-                <td>1,000</td>
+                <td id="total_orders">_</td>
             </tr>
             <tr>
                 <th scope="row">Delivered Orders</th>
-                <td>700</td>
-            </tr>
-            <tr>
-                <th scope="row">Pending Orders</th>
-                <td>150</td>
+                <td id="delivered">_</td>
             </tr>
             <tr>
                 <th scope="row">Orders In Transit</th>
-                <td>100</td>
-            </tr>
-            <tr>
-                <th scope="row">Canceled Orders</th>
-                <td>50</td>
+                <td id="in_transit">_</td>
             </tr>
         </table>
     </div>
@@ -66,6 +58,8 @@
         PHONE: 022713541<br />
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+</body>
 </body>
 
 </html>
