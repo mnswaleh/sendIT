@@ -1,4 +1,4 @@
-<!doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -22,36 +22,44 @@
         <div id="bottom_content">
             <form action="#">
                 <div class="form_inputs">
-                    <label for="order_number">Order Number:</label><br />
-                    <input type="text" placeholder="67892030" name="order_number" disabled="disabled" />
-                </div>
-                <div class="form_inputs">
-                    <label for="prive">Price:</label><br />
-                    <input type="text" placeholder="0.00" name="Price" disabled="disabled" />
-                </div>
-                <div class="form_inputs">
                     <label for="weight">Est Weight(Kg):</label><br />
-                    <input type="text" placeholder="Estimated weight" name="weight" />
+                    <input id="weight" type="number" value="0.00" name="weight" onchange="calc_price()"/>
                 </div>
                 <div class="form_inputs">
-                    <label for="pick_location">Pick Up Location:</label><br />
-                    <select name="pick_location">
-                        <option>Nyeri</option>
-                        <option>Kisumu</option>
-                        <option>Mombasa</option>
-                        <option>Kitale</option>
-                        <option>Eldoret</option>
+                    <label for="pick_up_loctaion">Pick Up Location:</label><br />
+                    <select name="pick_up_loctaion">
+                        <option value="nyeri">Nyeri</option>
+                        <option value="kisumu">Kisumu</option>
+                        <option value="mombasa">Mombasa</option>
+                        <option value="kitale">Kitale</option>
+                        <option value="eldoret">Eldoret</option>
+                        <option value="naivasha">Naivasha</option>
+                        <option value="kirinyaga">Kirinyaga</option>
+                        <option value="mwea">Mwea</option>
+                        <option value="narok">Narok</option>
+                        <option value="kiambu">Kiambu</option>
+                        <option value="nyahururu">Nyahururu</option>
                     </select>
                 </div>
                 <div class="form_inputs">
                     <label for="delivery_location">Delivery Location:</label><br />
                     <select name="delivery_location">
-                        <option>Nyeri</option>
-                        <option>Kisumu</option>
-                        <option>Mombasa</option>
-                        <option>Kitale</option>
-                        <option>Eldoret</option>
+                        <option value="nyeri">Nyeri</option>
+                        <option value="kisumu">Kisumu</option>
+                        <option value="mombasa">Mombasa</option>
+                        <option value="kitale">Kitale</option>
+                        <option value="eldoret">Eldoret</option>
+                        <option value="naivasha">Naivasha</option>
+                        <option value="kirinyaga">Kirinyaga</option>
+                        <option value="mwea">Mwea</option>
+                        <option value="narok">Narok</option>
+                        <option value="kiambu">Kiambu</option>
+                        <option value="nyahururu">Nyahururu</option>
                     </select>
+                </div>
+                <div class="form_inputs">
+                    <label for="price">Price:</label><br />
+                    <input id="price" type="number" value="0.00" name="price" disabled="disabled" />
                 </div>
                 <div class="form_inputs">
                     <button type="submit" class="btn_all btn_submit right_item">Submit</button>
@@ -67,6 +75,7 @@
         PHONE: 022713541<br />
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/create_delivery.js"></script>
 </body>
 
 </html>

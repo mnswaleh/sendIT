@@ -1,4 +1,4 @@
-<!doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -18,42 +18,62 @@
             Already have an account? <a href="sign-in.html" class="btn_all">Sign in</a>
         </div>
         <div id="bottom_content">
-            <form action="delivery_orders.html">
+            <form method="POST" id="form_signup">
                 <div class="form_inputs">
                     <label for="first_name">First Name:</label><br />
                     <input type="text" placeholder="First Name" name="first_name" />
+                    <span id="first_name" class="error_feedback"></span>
                 </div>
                 <div class="form_inputs">
                     <label for="second_name">Second Name:</label><br />
                     <input type="text" placeholder="Second Name" name="second_name" />
+                    <span id="second_name" class="error_feedback"></span>
                 </div>
                 <div class="form_inputs">
                     <label for="username">Username:</label><br />
                     <input type="text" placeholder="Username" name="username" />
+                    <span id="username" class="error_feedback"></span>
                 </div>
                 <div class="form_inputs">
                     <label for="email">Email:</label><br />
                     <input type="email" placeholder="email@you.com" name="email" />
+                    <span id="email" class="error_feedback"></span>
+                </div>
+                <div class="form_inputs">
+                    <label for="Password">Password:</label><br />
+                    <input type="password" placeholder="*******" name="password" />
+                    <span id="password" class="error_feedback"></span>
+                </div>
+                <div class="form_inputs">
+                    <input type="hidden" name="type" value="user"/>
                 </div>
                 <div class="form_inputs">
                     <label for="gender">Gender:</label><br />
                     Male <input type="radio" name="gender" value="male" checked="checked" />
                     Female <input type="radio" name="gender" value="female" />
+                    <span id="gender" class="error_feedback"></span>
                 </div>
                 <div class="form_inputs">
                     <label for="location">Location:</label><br />
                     <select name="location">
-                        <option>Nyeri</option>
-                        <option>Kisumu</option>
-                        <option>Mombasa</option>
-                        <option>Kitale</option>
-                        <option>Eldoret</option>
+                        <option value="nyeri">Nyeri</option>
+                        <option value="kisumu">Kisumu</option>
+                        <option value="mombasa">Mombasa</option>
+                        <option value="kitale">Kitale</option>
+                        <option value="eldoret">Eldoret</option>
+                        <option value="naivasha">Naivasha</option>
+                        <option value="kirinyaga">Kirinyaga</option>
+                        <option value="mwea">Mwea</option>
+                        <option value="narok">Narok</option>
+                        <option value="kiambu">Kiambu</option>
+                        <option value="nyahururu">Nyahururu</option>
                     </select>
+                    <span id="location" class="error_feedback"></span>
                 </div>
                 <div class="form_inputs">
-                        <input type="checkbox" name="terms">
-                        <label for="location">I understand the <a href="#">terms and conditions</a> by signing up</label>
-                    </div>
+                    <input type="checkbox" name="terms">
+                    <label for="location">I understand the <a href="#">terms and conditions</a> by signing up</label>
+                </div>
                 <div class="form_inputs">
                     <button type="submit" class="btn_all btn_submit right_item">Sign Up</button>
                 </div>
@@ -68,6 +88,7 @@
         PHONE: 022713541<br />
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/signup.js"></script>
 </body>
 
 </html>

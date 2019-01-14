@@ -1,4 +1,4 @@
-<!doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -11,27 +11,28 @@
 </head>
 
 <body>
-        <h1 class="page_title">Sign In</h1>
-        <hr />
+    <h1 class="page_title">Sign In</h1>
+    <hr />
     <div class="main_content">
         <div id="top_content">
             Do not have an account? <a href="sign-up.html" class="btn_all">Sign up</a>
         </div>
         <div id="bottom_content">
-            <form action="delivery_orders.html">
+            <form id="form_login" method="POST">
+                <div id="error_feedback" class="error_feedback"></div>
                 <div class="form_inputs">
                     <label for="username">Username:</label><br />
                     <input type="text" placeholder="username" name="username" />
                 </div>
                 <div class="form_inputs">
-                    <label for="pass">Password:</label><br />
-                    <input type="password" placeholder="......" name="pass">
+                    <label for="password">Password:</label><br />
+                    <input type="password" placeholder="......" name="password">
                 </div>
                 <div class="form_inputs">
                     <a href="#">Forgot Password?</a>
                 </div>
                 <div class="form_inputs">
-                    <button type="submit" class="btn_all btn_submit right_item">Sign In</button>
+                    <button id="btn_login" type="submit" class="btn_all btn_submit right_item">Sign In</button>
                 </div>
             </form>
         </div>
@@ -44,6 +45,7 @@
         PHONE: 022713541<br />
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>
