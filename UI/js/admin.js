@@ -33,9 +33,13 @@ fetch(request).then(function (response) {
             oCell.innerHTML = '<a href="update_order.html?order=' + delivery.order_no + '">Update</a>';
             num++;
         });
-    }else if(myresponse.ERROR){
+    }else{
         alert(myresponse.ERROR);
-    } else {
-        alert('Ooops! Something went wrong');
     }
+}).catch(error => {
+    console.log(error);
+
+    setTimeout(() => {
+        alert("No server Response! Check internet connectivity")
+    }, 2000)
 });

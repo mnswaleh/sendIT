@@ -11,11 +11,15 @@ function get_total() {
     }).then(function (myresponse) {
         if (myresponse.Title) {
             document.getElementById("total_orders").innerHTML = Object.keys(myresponse.orders).length;
-        } else if (myresponse.ERROR) {
-            alert(myresponse.ERROR);
         } else {
-            alert('Ooops! Something went wrong');
+            alert(myresponse.ERROR);
         }
+    }).catch(error => {
+        console.log(error);
+
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 2000)
     });
 }
 
@@ -32,11 +36,15 @@ function get_delivered() {
     }).then(function (myresponse) {
         if (myresponse.delivered >= 0) {
             document.getElementById("delivered").innerHTML = myresponse.delivered;
-        } else if (myresponse.ERROR) {
+        } else{
             alert(myresponse.ERROR);
-        } else {
-            alert('Ooops! Something went wrong');
         }
+    }).catch(error => {
+        console.log(error);
+
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 2000)
     });
 }
 
@@ -81,9 +89,13 @@ fetch(request).then(function (response) {
         get_inTransit();
     } else if (myresponse.ERROR) {
         alert(myresponse.ERROR)
-    } else if (myresponse.message) {
-        alert(myresponse.message)
     } else {
-        alert('Ooops! Something went wrong');
+        alert(myresponse.message)
     }
+}).catch(error => {
+    console.log(error);
+
+    setTimeout(() => {
+        alert("No server Response! Check internet connectivity")
+    }, 2000)
 });

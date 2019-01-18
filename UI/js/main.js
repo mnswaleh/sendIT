@@ -41,15 +41,18 @@ function logout(){
             return response.json();
         }
     }).then(function (myresponse) {
-        if (myresponse.message) {
+        if (myresponse.ERROR) {
+            alert(myresponse.ERROR);
+        } else {
             localStorage.setItem('token', myresponse.access);
             localStorage.setItem('user', myresponse.user);
-            location.reload(true);
-        } else if (myresponse.ERROR) {
-            alert(myresponse.ERROR);
-        } 
-        else {
-            alert('Ooops! Something went wrong');
+            window.location.replace('sign-in.html');
         }
+    }).catch(error => {
+        console.log(error);
+
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 2000)
     });
 }

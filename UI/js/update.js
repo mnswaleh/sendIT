@@ -17,13 +17,17 @@ fetch(request).then(function (response) {
         document.getElementById("price").value = myresponse.price;
     } else if (myresponse.ERROR) {
         alert(myresponse.ERROR)
-    } else if (myresponse.message) {
-        alert(myresponse.message)
     } else {
-        alert('Ooops! Something went wrong');
+        alert(myresponse.message)
     }
 }).then(function(){
     location_current = document.getElementById('current_location').value;
+}).catch(error => {
+    console.log(error);
+
+    setTimeout(() => {
+        alert("No server Response! Check internet connectivity")
+    }, 2000)
 });
 
 document.getElementById("form_update").onsubmit = function (event) {
@@ -57,11 +61,14 @@ document.getElementById("form_update").onsubmit = function (event) {
             alert(myresponse.message[firstKey]);
         } else if (myresponse.ERROR) {
             alert(myresponse.ERROR)
-        } else if (myresponse.order_no) {
+        } else {
             location.reload(true);
         }
-        else {
-            alert('Ooops! Something went wrong');
-        }
+    }).catch(error => {
+        console.log(error);
+    
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 2000)
     });
 }

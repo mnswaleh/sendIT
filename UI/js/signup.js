@@ -17,14 +17,17 @@ document.getElementById("form_signup").onsubmit = function (event) {
     }).then(function (myresponse) {
         if (myresponse.user) {
             window.location.replace('sign-in.html');
-        } else if (myresponse.ERROR) {
-            alert(myresponse.ERROR);
         } else if (myresponse.message) {
             var firstKey = Object.keys(myresponse.message)[0];
             alert(myresponse.message[firstKey]);
+        } else {
+            alert(myresponse.ERROR);
         }
-        else {
-            alert('Ooops! Something went wrong');
-        }
+    }).catch(error => {
+        console.log(error);
+    
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 2000)
     });
 }

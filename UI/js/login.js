@@ -1,4 +1,4 @@
-document.getElementById("form_login").onsubmit = function (event) {
+function login_user(){
     document.getElementById("error_feedback").innerHTML = "";
     event.preventDefault()
     let formData = FormDataToJSON(document.getElementById('form_login'));
@@ -27,8 +27,9 @@ document.getElementById("form_login").onsubmit = function (event) {
             var firstKey = Object.keys(myresponse.message)[0];
             document.getElementById("error_feedback").innerHTML = myresponse.message[firstKey];
         }
-        else {
-            alert('Ooops! Something went wrong');
-        }
     });
+}
+
+document.getElementById("form_login").onsubmit = function (event) {
+    login_user();
 }

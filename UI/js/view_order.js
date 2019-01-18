@@ -20,11 +20,15 @@ fetch(request).then(function (response) {
         document.getElementById("status").innerHTML = myresponse.status;
     } else if (myresponse.ERROR) {
         alert(myresponse.ERROR)
-    } else if (myresponse.message) {
+    } else{
         alert(myresponse.message)
-    } else {
-        alert('Ooops! Something went wrong');
     }
+}).catch(error => {
+    console.log(error);
+
+    setTimeout(() => {
+        alert("No server Response! Check internet connectivity")
+    }, 2000)
 });
 
 document.getElementById("btn_change").href="change_delivery.html?order=" + params.get('order');
@@ -53,12 +57,15 @@ document.getElementById("order_cancel").onclick = function () {
                 alert(myresponse.message);
             } else if (myresponse.ERROR) {
                 alert(myresponse.ERROR);
-            } else if (myresponse.status == "canceled") {
+            } else {
                 location.reload(true);
             }
-            else {
-                alert('Ooops! Something went wrong');
-            }
+        }).catch(error => {
+            console.log(error);
+        
+            setTimeout(() => {
+                alert("No server Response! Check internet connectivity")
+            }, 2000)
         });
     }
 };

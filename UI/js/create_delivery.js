@@ -40,12 +40,15 @@ document.getElementById("form_createDelivery").onsubmit = function (event) {
             alert(myresponse.message[firstKey]);
         } else if (myresponse.Error) {
             alert(myresponse.Error)
-        } else if (myresponse.status) {
+        } else{
             alert('Order created');
             location.reload(true);
         }
-        else {
-            alert('Ooops! Something went wrong');
-        }
+    }).catch(error => {
+        console.log(error);
+
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 2000)
     });
 }

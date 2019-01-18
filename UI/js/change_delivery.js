@@ -16,11 +16,15 @@ fetch(request).then(function (response) {
         document.getElementById("price").value = myresponse.price;
     } else if (myresponse.ERROR) {
         alert(myresponse.ERROR)
-    } else if (myresponse.message) {
+    } else{
         alert(myresponse.message)
-    } else {
-        alert('Ooops! Something went wrong');
     }
+}).catch(error => {
+    console.log(error);
+
+    setTimeout(() => {
+        alert("No server Response! Check internet connectivity")
+    }, 2000)
 });
 
 document.getElementById("btn_backPage").href="view_order.html?order=" + params.get('order');
@@ -51,11 +55,14 @@ document.getElementById("form_changeDelivery").onsubmit = function (event) {
             alert(myresponse.message[firstKey]);
         } else if (myresponse.ERROR) {
             alert(myresponse.ERROR)
-        } else if (myresponse.destination == document.getElementById('delivery_location').value) {
+        } else{
             location.reload(true);
         }
-        else {
-            alert('Ooops! Something went wrong');
-        }
+    }).catch(error => {
+        console.log(error);
+
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 2000)
     });
 }
