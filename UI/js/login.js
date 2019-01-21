@@ -1,6 +1,8 @@
-function login_user(){
+let myresponse = {};
+
+function login_user() {
     document.getElementById("error_feedback").innerHTML = "";
-    event.preventDefault()
+
     let formData = FormDataToJSON(document.getElementById('form_login'));
 
     let myPost = {
@@ -14,8 +16,26 @@ function login_user(){
     let request = new Request(SERVER + 'auth/login', myPost);
 
     fetch(request).then(function (response) {
-        return response.json();
-    }).then(function (myresponse) {
+        myresponse = response.json();
+    }).catch(error => {
+        console.log(error);
+
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 950)
+    });
+}
+
+document.getElementById("form_login").onsubmit = function (event) {
+    event.preventDefault();
+    let login_promise = new Promise((resolve, reject) => {
+        login_user();
+        window.setTimeout(
+            function () {
+                resolve(myresponse);
+            }, 1000);
+    });
+    login_promise.then((myresponse) => {
         if (myresponse.access) {
             localStorage.setItem('token', myresponse.access);
             localStorage.setItem('user', myresponse.user);
@@ -28,8 +48,5 @@ function login_user(){
             document.getElementById("error_feedback").innerHTML = myresponse.message[firstKey];
         }
     });
-}
 
-document.getElementById("form_login").onsubmit = function (event) {
-    login_user();
 }

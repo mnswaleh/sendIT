@@ -1,21 +1,34 @@
-function ToDo(){
-  this.todo = [];
-}
-ToDo.prototype.addTodo= function(item){
-  this.todo.push(item)
-}
-ToDo.prototype.getItems= function(){
-  return this.todo
-}
+describe('Login Page', function () {
+  let fixture_html = "";
+  beforeAll(() => {
+    jasmine.getFixtures().cleanUp();
+    jasmine.getFixtures().fixturesPath = '../UI';
+    jasmine.getFixtures().load('sign-in.html');
+    fixture_html = $('#form_login')[0];
+  });
 
-describe('Testing the functionality, this is the checklist', ()=>{
-  it('should add an item', ()=>{
-    let todo = new ToDo();
-    let item = {
-     title: "get milk",
-     complete: false
-   }
-    const done = todo.addTodo(item)
-    expect(todo.getItems().length).toBe(1);
-  })
-})
+  it('should display login form', () => {
+    expect($('#form_login')[0]).toBeInDOM();
+  });
+
+  it('Should Login User', () => {
+    fixture = setFixtures(fixture_html);
+    $('#username')[0].setAttribute("value", "fred");
+    $('#password')[0].setAttribute("value", "Ab243677");
+
+    expect($('#form_login')[0]).toBeInDOM();
+    expect($('#username')[0]).toHaveValue("fred");
+
+    let login_promise = new Promise((resolve, reject) => {
+      login_user();
+      window.setTimeout(
+        function () {
+          resolve(myresponse);
+        }, 1000);
+    });
+    login_promise.then((myresponse) => {
+      expect(myresponse.access).toBe(true);
+    })
+  });
+});
+
