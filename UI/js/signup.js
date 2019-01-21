@@ -1,3 +1,5 @@
+
+
 document.getElementById("form_signup").onsubmit = function (event) {
     event.preventDefault()
     let formData = FormDataToJSON(document.getElementById('form_signup'));
@@ -12,13 +14,13 @@ document.getElementById("form_signup").onsubmit = function (event) {
 
     let request = new Request(SERVER + 'auth/signup', myPost);
 
-    fetch(request).then(function (response) {
+    fetch(request).then((response) => {
         return response.json();
-    }).then(function (myresponse) {
+    }).then((myresponse) => {
         if (myresponse.user) {
             window.location.replace('sign-in.html');
         } else if (myresponse.message) {
-            var firstKey = Object.keys(myresponse.message)[0];
+            let firstKey = Object.keys(myresponse.message)[0];
             alert(myresponse.message[firstKey]);
         } else {
             alert(myresponse.ERROR);
