@@ -44,4 +44,6 @@ function load_deliveries() {
     });
 }
 
-window.onload = load_deliveries();
+window.onload = () => {
+    load_deliveries();
+}

@@ -10,14 +10,10 @@ describe('Login Page', function () {
     expect($('#form_login')[0]).toBeInDOM();
   });
 
-  it('Should Login User', () => {
+  it('Should Login User', (done) => {
     fixture = setFixtures(fixture_html);
     $('#username')[0].setAttribute("value", "fred");
     $('#password')[0].setAttribute("value", "Ab243677");
-
-    expect($('#form_login')[0]).toBeInDOM();
-    expect($('#username')[0]).toHaveValue("fred");
-
     let login_promise = new Promise((resolve, reject) => {
       login_user();
       window.setTimeout(
@@ -25,9 +21,26 @@ describe('Login Page', function () {
           resolve(myresponse);
         }, 1000);
     });
+    
     login_promise.then((myresponse) => {
-      expect(myresponse.access).toBe(true);
+      expect(myresponse.access).toBeTruthy();
+      done();
     })
   });
 });
+
+// describe('Signup Page', function () {
+//   let fixture_html = "";
+//   beforeAll(() => {
+//     fixture = setFixtures("");
+//     jasmine.getFixtures().clearCache();
+//     jasmine.getFixtures().fixturesPath = '../UI';
+//     jasmine.getFixtures().load('sign-up.html');
+//     fixture_html = $('#form_signup')[0];
+//   });
+
+//   it('should display signup form', () => {
+//     expect($('#form_signup')[0]).toBeInDOM();
+//   });
+// });
 
