@@ -1,7 +1,6 @@
 describe('Login Page', function () {
   let fixture_html = "";
   beforeAll(() => {
-    jasmine.getFixtures().cleanUp();
     jasmine.getFixtures().fixturesPath = '../UI';
     jasmine.getFixtures().load('sign-in.html');
     fixture_html = $('#form_login')[0];

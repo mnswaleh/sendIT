@@ -1,5 +1,3 @@
-let myresponse = {};
-
 let  login_user = () => {
     document.getElementById("error_feedback").innerHTML = "";
 
