@@ -11,7 +11,7 @@ let  login_user = () => {
         body: formData
     };
 
-    let request = new Request(SERVER + 'auth/login', myPost);
+    request = new Request(SERVER + 'auth/login', myPost);
 
     fetch(request).then((response) => {
         myresponse = response.json();

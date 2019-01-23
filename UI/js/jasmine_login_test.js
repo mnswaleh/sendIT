@@ -23,24 +23,10 @@ describe('Login Page', function () {
     });
     
     login_promise.then((myresponse) => {
+      localStorage.setItem('token', myresponse.access);
+      localStorage.setItem('user', myresponse.user);
       expect(myresponse.access).toBeTruthy();
       done();
     })
   });
 });
-
-// describe('Signup Page', function () {
-//   let fixture_html = "";
-//   beforeAll(() => {
-//     fixture = setFixtures("");
-//     jasmine.getFixtures().clearCache();
-//     jasmine.getFixtures().fixturesPath = '../UI';
-//     jasmine.getFixtures().load('sign-up.html');
-//     fixture_html = $('#form_signup')[0];
-//   });
-
-//   it('should display signup form', () => {
-//     expect($('#form_signup')[0]).toBeInDOM();
-//   });
-// });
-

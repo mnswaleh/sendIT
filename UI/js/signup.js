@@ -9,7 +9,7 @@ let signup_user = () => {
         body: formData
     };
 
-    let request = new Request(SERVER + 'auth/signup', myPost);
+    request = new Request(SERVER + 'auth/signup', myPost);
 
     fetch(request).then((response) => {
         myresponse = response.json();

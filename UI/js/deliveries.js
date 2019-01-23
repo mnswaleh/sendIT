@@ -1,16 +1,34 @@
 let table = document.getElementById("table_body");
 
-function load_deliveries() {
-    let request = new Request(SERVER + 'users/' + user_info[0] + '/parcels', myGet);
+let load_deliveries = (request) => {
+    request = new Request(SERVER + 'users/' + user_info[0] + '/parcels', myGet);
 
-    fetch(request).then(function (response) {
+    fetch(request).then((response) => {
         if (response.status !== 200 && response.status !== 403) {
-            window.location.replace('sign-in.html');
+            myresponse.login = "login afresh";
         } else {
-            return response.json();
+            myresponse = response.json();
         }
 
-    }).then(function (myresponse) {
+    }).catch(error => {
+        console.log(error);
+
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 950)
+    });
+}
+
+window.onload = () => {
+
+    let deliveries_promise = new Promise((resolve, reject) => {
+        load_deliveries();
+        window.setTimeout(
+            function () {
+                resolve(myresponse);
+            }, 1000);
+    });
+    deliveries_promise.then((myresponse) => {
         if (myresponse.Title) {
             let num = 1;
             myresponse.orders.forEach(delivery => {
@@ -32,18 +50,10 @@ function load_deliveries() {
                 oCell.innerHTML = '<a href="view_order.html?order=' + delivery.order_no + '">View</a>';
                 num++;
             });
-        } else {
+        } else if (myresponse.ERROR) {
             alert(myresponse.ERROR);
+        } else{
+            window.location.replace('sign-in.html');
         }
-    }).catch(error => {
-        console.log(error);
-
-        setTimeout(() => {
-            alert("No server Response! Check internet connectivity")
-        }, 2000)
     });
-}
-
-window.onload = () => {
-    load_deliveries();
 }

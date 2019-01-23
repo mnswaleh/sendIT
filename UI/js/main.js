@@ -3,17 +3,21 @@ const SERVER = "http://127.0.0.1:5000/api/v2/";
 let myresponse = {};
 let params = new URLSearchParams(location.search);
 let access_token = localStorage.getItem('token') || "FDFAXAF&/SA/(AB>VAB";
-let user_info = localStorage.getItem('user') ||  [0, "user"];
+let user_info = localStorage.getItem('user') || [0, "user"];
 
 let myHeaders = new Headers();
 
 myHeaders.append("Content-Type", "application/json");
 myHeaders.append("Authorization", 'Bearer ' + access_token);
 
-let myGet = { method: 'GET',
-               headers: myHeaders,
-               mode: 'cors',
-               cache: 'default' };
+let myGet = {
+    method: 'GET',
+    headers: myHeaders,
+    mode: 'cors',
+    cache: 'default'
+};
+
+let request = new Request(SERVER, myGet);
 
 function FormDataToJSON(FormElement) {
     var formData = new FormData(FormElement);
@@ -25,20 +29,20 @@ function FormDataToJSON(FormElement) {
     return JSON.stringify(ConvertedJSON);
 }
 
-function logout(){
-    let myPost = {
+function logout() {
+    let myPUT = {
         method: 'PUT',
         headers: myHeaders,
         mode: 'cors',
         cache: 'default'
     };
 
-    let request = new Request(SERVER + 'auth/logout', myPost);
+    request = new Request(SERVER + 'auth/logout', myPUT);
 
     fetch(request).then(function (response) {
         if (response.status !== 200 && response.status !== 403) {
             window.location.replace('sign-in.html');
-        }else{
+        } else {
             return response.json();
         }
     }).then(function (myresponse) {
@@ -54,6 +58,6 @@ function logout(){
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 2000)
+        }, 950)
     });
 }
