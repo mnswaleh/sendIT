@@ -1,4 +1,4 @@
-describe('Login Page', function () {
+describe('Login Page', () => {
   let fixture_html = "";
   beforeAll(() => {
     jasmine.getFixtures().fixturesPath = '../UI';
@@ -16,12 +16,11 @@ describe('Login Page', function () {
     $('#password')[0].setAttribute("value", "Ab243677");
     let login_promise = new Promise((resolve, reject) => {
       login_user();
-      window.setTimeout(
-        function () {
-          resolve(myresponse);
-        }, 1000);
+      window.setTimeout(() => {
+        resolve(myresponse);
+      }, 1000);
     });
-    
+
     login_promise.then((myresponse) => {
       localStorage.setItem('token', myresponse.access);
       localStorage.setItem('user', myresponse.user);

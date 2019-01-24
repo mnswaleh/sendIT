@@ -1,4 +1,4 @@
-describe('Login Page', function () {
+describe('Deliveries Page', () => {
     beforeAll(() => {
         jasmine.getFixtures().fixturesPath = '../UI';
         jasmine.getFixtures().load('delivery_orders.html');
@@ -9,18 +9,17 @@ describe('Login Page', function () {
     });
 
     it('Should display delivery orders by logged in user', (done) => {
-        let login_promise = new Promise((resolve, reject) => {
+        let deliveries_promise = new Promise((resolve, reject) => {
             load_deliveries();
-            window.setTimeout(
-                function () {
-                    resolve(myresponse);
-                }, 1000);
+            window.setTimeout(() => {
+                resolve(myresponse);
+            }, 1000);
         });
 
-        login_promise.then((myresponse) => {
+        deliveries_promise.then((myresponse) => {
             expect(myresponse.Title).toBeTruthy();
             done();
         })
     });
-    
+
 });
