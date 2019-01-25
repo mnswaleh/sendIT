@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SendIT Update Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/fontawesome-all.min.css" />
+</head>
+
+<body>
+    <div class="main_content">
+        <div class="page_header">
+            <span class="dot">.</span>
+            <a href="#" class="btn_all btn_cancel right_item" id="btn_logout" onclick="logout()"><span class="fa fa-power-off"></span> LOGOUT</a>
+            <hr />
+        </div>
+        <div class="page_title">Update Delivery Order</div>
+        <div id="bottom_content">
+            <form id="form_update" method="POST">
+                <div class="form_inputs">
+                    <label for="order_number">Order Number:</label><br />
+                    <input id="order_number" type="text" placeholder="67892030" name="order_number" disabled="disabled" />
+                </div>
+                <div class="form_inputs">
+                    <label for="price">Price:</label><br />
+                    <input id="price" type="number" placeholder="0.00" name="price" disabled="disabled" />
+                </div>
+                <div class="form_inputs">
+                    <label for="weight">Est Weight(Kg):</label><br />
+                    <input id="weight" type="number" placeholder="0.09" name="weight" disabled="disabled" />
+                </div>
+                <div class="form_inputs">
+                    <label for="current_location">current Location:</label><br />
+                    <select id="current_location" name="current_location">
+                        <option value="nyeri">Nyeri</option>
+                        <option value="kisumu">Kisumu</option>
+                        <option value="mombasa">Mombasa</option>
+                        <option value="kitale">Kitale</option>
+                        <option value="eldoret">Eldoret</option>
+                        <option value="naivasha">Naivasha</option>
+                        <option value="kirinyaga">Kirinyaga</option>
+                        <option value="mwea">Mwea</option>
+                        <option value="narok">Narok</option>
+                        <option value="kiambu">Kiambu</option>
+                        <option value="nyahururu">Nyahururu</option>
+                    </select>
+                </div>
+                <div class="form_inputs">
+                    <label for="status">Status:</label><br />
+                    <select id="status" name="status">
+                        <option value="delivered">Delivered</option>
+                        <option value="pending">Pending</option>
+                        <option value="canceled">Canceled</option>
+                        <option value="in transit">On Transit</option>
+                    </select>
+                </div>
+                <div class="form_inputs">
+                    <button type="submit" class="btn_all btn_submit right_item">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="page_footer">
+        <h4><u>CONTACT US</u></h4>
+        P.O BOX 1078-0100,<br />
+        NAIROBI<br />
+        EMAIL: info@sendit.com<br />
+        PHONE: 022713541<br />
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/update.js"></script>
+</body>
+
+</html>

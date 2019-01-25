@@ -1,0 +1,240 @@
+/* body background and height*/
+html{
+    position: relative;
+    height: 100%;
+    padding-bottom: 80px;
+}
+
+body{
+    background-image: linear-gradient(white, rgb(45, 167, 126), white);
+}
+
+.page_header{
+    font-size: 5em;
+    text-align: center;
+}
+
+.page_header .btn_cancel{
+    margin-top: 35px;
+}
+
+.dot{
+    color: rgb(215, 248, 250);
+}
+
+.page_title{
+    font-size: 4em;
+    margin-top: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#welcome_message{
+    margin-top: 20%;
+    margin-right: 20%;
+    font-size: 24px;
+}
+
+.right_item{
+    float: right;
+    margin-bottom: 5px;
+}
+
+#btn_auth{
+    margin-bottom: 20px;
+}
+
+.btn_all{
+    text-decoration: none;
+    color: black;
+    background-image: linear-gradient(white, rgb(0, 204, 255) 80%, white);
+    padding: 10px;
+    border-radius: 10%;
+    border:  1px solid rgb(0, 204, 255);
+    font-size: 18px;
+}
+
+.page_header .btn_all{
+    background-image: none !important;
+    border-radius: 7%;
+}
+
+.btn_submit{
+    background-image: linear-gradient(white, rgb(9, 218, 120) 80%, white);
+    border:  1px solid rgb(9, 218, 120);
+}
+
+.btn_cancel{
+    background-image: linear-gradient(white, rgb(209, 0, 0) 80%, white);
+    border:  1px solid rgb(9, 218, 120);
+}
+
+.page_header .btn_cancel{
+    color: red;
+}
+
+
+.btn_all:hover{
+    background-image: none !important;
+    background-color: rgb(0, 204, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.btn_submit:hover{
+    background-color: rgb(9, 218, 120);
+}
+
+.btn_cancel:hover{
+    background-color: rgb(209, 0, 0);
+}
+
+.active{
+    background-image: none !important;
+    background-color: rgb(0, 204, 255);
+    color: white;
+}
+
+.active:hover{
+    border:  2px solid rgb(2, 43, 53);
+    color: rgb(2, 43, 53);
+}
+
+
+.txt_big{
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+.error_feedback{
+    color: rgb(236, 3, 3);
+}
+
+.main_content table{
+    font-size: 20px;
+    border: 2px solid rgb(0, 204, 255);
+    background-color: rgb(183, 231, 215);
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+.tbl_hover tbody tr:hover{
+    background-color: rgb(57, 202, 202);
+}
+
+.tbl_left th{
+    text-align: left;
+    padding-left: 10%;
+}
+
+thead th{
+    background-color: rgb(19, 174, 185);
+}
+
+th{
+    font-size: 18px;
+}
+
+#top_content{
+    margin-top: 5%;
+    text-align: center;
+}
+
+#btn_controls{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 20px;
+    width: 50%;
+}
+
+#bottom_content{
+    margin-top: 20px;
+    border: 2px solid rgb(0, 204, 255);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+#bottom_content form{
+    padding: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-bottom: 50px;
+}
+
+.form_inputs{
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.form_inputs select{
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.form_inputs input, .form_inputs select{
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4%;
+    border:  1px solid rgb(72, 78, 80);
+}
+
+.form_inputs input:hover, .form_inputs select:hover{
+    border:  1px solid rgb(0, 204, 255);
+}
+
+.page_footer{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(45, 167, 126);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 1400px) {
+    #bottom_content{
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 1030px) {
+    #bottom_content{
+        width: 50%;
+    }
+
+    .main_content table{
+        width: 90%;
+    }
+
+    #btn_controls{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    #bottom_content{
+        width: 90%;
+    }
+
+    #bottom_content form{
+        padding: 10px;
+        width: 50%;
+        padding-bottom: 50px;
+    }
+}
