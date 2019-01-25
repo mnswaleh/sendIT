@@ -44,7 +44,7 @@ document.getElementById("order_cancel").onclick = () => {
             mode: 'cors',
             cache: 'default'
         };
-    
+
         let request = new Request(SERVER + 'parcels/' + params.get('order') + '/cancel', myPost);
 
         let order_promise = new Promise((resolve, reject) => {

@@ -1,6 +1,4 @@
 let  login_user = () => {
-    document.getElementById("error_feedback").innerHTML = "";
-
     let formData = FormDataToJSON(document.getElementById('form_login'));
 
     let myPost = {
@@ -26,6 +24,8 @@ let  login_user = () => {
 
 document.getElementById("form_login").onsubmit = function (event) {
     event.preventDefault();
+    document.getElementById("error_feedback").innerHTML = "";
+    
     let login_promise = new Promise((resolve, reject) => {
         login_user();
         window.setTimeout(
