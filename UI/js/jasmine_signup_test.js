@@ -17,7 +17,7 @@ describe('Signup Page', () => {
       signup_user();
       window.setTimeout(() => {
         resolve(myresponse);
-      }, 1000);
+      }, 2020);
     });
 
     signup_promise.then((myresponse) => {

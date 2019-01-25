@@ -17,7 +17,7 @@ describe('Update Order Page', () => {
         update_order(request_url);
         window.setTimeout(() => {
           resolve(myresponse);
-        }, 1000);
+        }, 2020);
       });
   
       current_promise.then((myresponse) => {

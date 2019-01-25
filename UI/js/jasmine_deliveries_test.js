@@ -13,7 +13,7 @@ describe('Deliveries Page', () => {
             load_deliveries();
             window.setTimeout(() => {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
         });
 
         deliveries_promise.then((myresponse) => {

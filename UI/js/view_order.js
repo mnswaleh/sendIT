@@ -13,7 +13,7 @@ let load_order = () => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }
 
@@ -30,7 +30,7 @@ let cancel_order = (request) => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }
 
@@ -52,7 +52,7 @@ document.getElementById("order_cancel").onclick = () => {
             window.setTimeout(
                 function () {
                     resolve(myresponse);
-                }, 1000);
+                }, 2020);
         });
 
         order_promise.then((myresponse) => {
@@ -77,7 +77,7 @@ window.onload = () => {
         window.setTimeout(
             function () {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
     });
     order_promise.then((myresponse) => {
         if (myresponse.order_no) {

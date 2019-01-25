@@ -14,7 +14,7 @@ describe('View order Page', () => {
             load_order();
             window.setTimeout(() => {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
         });
 
         order_promise.then((myresponse) => {
@@ -37,7 +37,7 @@ describe('View order Page', () => {
             cancel_order(request);
             window.setTimeout(() => {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
         });
 
         order_promise.then((myresponse) => {

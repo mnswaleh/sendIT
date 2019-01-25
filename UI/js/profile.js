@@ -22,7 +22,7 @@ let get_total = () => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 300)
+        }, 2000)
     });
 }
 
@@ -49,7 +49,7 @@ let get_delivered = () => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 300)
+        }, 2000)
     });
 }
 
@@ -76,7 +76,7 @@ let get_inTransit = () => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 300)
+        }, 2000)
     });
 }
 
@@ -96,7 +96,7 @@ let load_profile = () => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 300)
+        }, 2000)
     });
 }
 
@@ -107,7 +107,7 @@ window.onload = () => {
         window.setTimeout(
             function () {
                 resolve(myresponse);
-            }, 1200);
+            }, 2020);
     });
     order_promise.then((myresponse) => {
         if (myresponse.user_id) {

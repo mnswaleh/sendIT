@@ -15,7 +15,7 @@ let admin_deliveries = (request) => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }
 
@@ -26,7 +26,7 @@ window.onload = () => {
         window.setTimeout(
             function () {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
     });
     deliveries_promise.then((myresponse) => {
         if (myresponse.Title) {

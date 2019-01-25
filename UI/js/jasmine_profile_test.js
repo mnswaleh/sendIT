@@ -16,7 +16,7 @@ describe('View Profile Page', () => {
             get_total();
             window.setTimeout(() => {
                 resolve(myresponse);
-            }, 1200);
+            }, 2020);
         });
 
         total_promise.then((myresponse) => {
@@ -31,7 +31,7 @@ describe('View Profile Page', () => {
             get_delivered();
             window.setTimeout(() => {
                 resolve(myresponse);
-            }, 1200);
+            }, 2020);
         });
 
         delivered_promise.then((myresponse) => {
@@ -46,7 +46,7 @@ describe('View Profile Page', () => {
             get_inTransit();
             window.setTimeout(() => {
                 resolve(myresponse);
-            }, 1200);
+            }, 2020);
         });
 
         transit_promise.then((myresponse) => {
