@@ -1,6 +1,4 @@
-document.getElementById("form_login").onsubmit = function (event) {
-    document.getElementById("error_feedback").innerHTML = "";
-    event.preventDefault()
+let  login_user = () => {
     let formData = FormDataToJSON(document.getElementById('form_login'));
 
     let myPost = {
@@ -11,11 +9,31 @@ document.getElementById("form_login").onsubmit = function (event) {
         body: formData
     };
 
-    let request = new Request(SERVER + 'auth/login', myPost);
+    request = new Request(SERVER + 'auth/login', myPost);
 
-    fetch(request).then(function (response) {
-        return response.json();
-    }).then(function (myresponse) {
+    fetch(request).then((response) => {
+        myresponse = response.json();
+    }).catch(error => {
+        console.log(error);
+
+        setTimeout(() => {
+            alert("No server Response! Check internet connectivity")
+        }, 950)
+    });
+}
+
+document.getElementById("form_login").onsubmit = function (event) {
+    event.preventDefault();
+    document.getElementById("error_feedback").innerHTML = "";
+    
+    let login_promise = new Promise((resolve, reject) => {
+        login_user();
+        window.setTimeout(
+            function () {
+                resolve(myresponse);
+            }, 1000);
+    });
+    login_promise.then((myresponse) => {
         if (myresponse.access) {
             localStorage.setItem('token', myresponse.access);
             localStorage.setItem('user', myresponse.user);
@@ -24,11 +42,9 @@ document.getElementById("form_login").onsubmit = function (event) {
         } else if (myresponse.ERROR) {
             document.getElementById("error_feedback").innerHTML = myresponse.ERROR;
         } else if (myresponse.message) {
-            var firstKey = Object.keys(myresponse.message)[0];
+            let firstKey = Object.keys(myresponse.message)[0];
             document.getElementById("error_feedback").innerHTML = myresponse.message[firstKey];
         }
-        else {
-            alert('Ooops! Something went wrong');
-        }
     });
+
 }
