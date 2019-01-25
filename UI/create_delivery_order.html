@@ -20,14 +20,14 @@
         </div>
         <div class="page_title">Create Delivery Order</div>
         <div id="bottom_content">
-            <form action="#">
+            <form id="form_createDelivery" method="POST">
                 <div class="form_inputs">
                     <label for="weight">Est Weight(Kg):</label><br />
-                    <input id="weight" type="number" value="0.00" name="weight" onchange="calc_price()"/>
+                    <input id="weight" type="number" name="weight" onchange="calc_price()"/>
                 </div>
                 <div class="form_inputs">
-                    <label for="pick_up_loctaion">Pick Up Location:</label><br />
-                    <select name="pick_up_loctaion">
+                    <label for="pick_up_location">Pick Up Location:</label><br />
+                    <select name="pick_up_location">
                         <option value="nyeri">Nyeri</option>
                         <option value="kisumu">Kisumu</option>
                         <option value="mombasa">Mombasa</option>
@@ -59,7 +59,8 @@
                 </div>
                 <div class="form_inputs">
                     <label for="price">Price:</label><br />
-                    <input id="price" type="number" value="0.00" name="price" disabled="disabled" />
+                    <input id="price_2" type="number" value="0.00" disabled="disabled" />
+                    <input id="price" type="hidden" name="price" />
                 </div>
                 <div class="form_inputs">
                     <button type="submit" class="btn_all btn_submit right_item">Submit</button>
