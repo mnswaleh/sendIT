@@ -1,4 +1,4 @@
-const SERVER = "https://api-sendit.herokuapp.com/api/v2/";
+const SERVER = "http://127.0.0.1:5000/api/v2/";
 
 let myresponse = {};
 let params = new URLSearchParams(location.search);
@@ -58,6 +58,6 @@ function logout() {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }

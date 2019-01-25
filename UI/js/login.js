@@ -18,7 +18,7 @@ let  login_user = () => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }
 
@@ -31,7 +31,7 @@ document.getElementById("form_login").onsubmit = function (event) {
         window.setTimeout(
             function () {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
     });
     login_promise.then((myresponse) => {
         if (myresponse.access) {

@@ -42,7 +42,7 @@ let create_order = ()=>{
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }
 
@@ -53,7 +53,7 @@ document.getElementById("form_createDelivery").onsubmit = (event) => {
         window.setTimeout(
             function () {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
     });
     create_promise.then((myresponse) => {
         if (myresponse.message) {

@@ -17,7 +17,7 @@ describe('Create Order Page', () => {
         create_order();
         window.setTimeout(() => {
           resolve(myresponse);
-        }, 1000);
+        }, 2020);
       });
   
       signup_promise.then((myresponse) => {

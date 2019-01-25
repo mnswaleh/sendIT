@@ -1,4 +1,3 @@
-let location_current = "";
 
 request = new Request(SERVER + 'parcels/' + params.get('order'), myGet);
 
@@ -15,13 +14,14 @@ let fetch_order = () => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }
 
 let update_order = (request_url)=>{
     let toupdate = 'status'
     let formData = FormDataToJSON(document.getElementById('form_update'));
+    let location_current = document.getElementById('current_location').value;
 
     let myPost = {
         method: 'PUT',
@@ -49,7 +49,7 @@ let update_order = (request_url)=>{
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }
 
@@ -62,18 +62,19 @@ document.getElementById("form_update").onsubmit = (event) => {
         window.setTimeout(
             function () {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
     });
+    
     delivery_promise.then((myresponse) => {
-        if (myresponse.message.current_location) {
+        if (myresponse.message && myresponse.message.current_location) {
             alert(myresponse.message.current_location);
-        }else if (myresponse.message.status) {
+        }else if (myresponse.message &&  myresponse.message.status) {
             alert(myresponse.message.status);
         }else if (myresponse.message) {
             alert(myresponse.message);
         } else if (myresponse.Error) {
             alert(myresponse.Error)
-        } else if(message.login) {
+        } else if(myresponse.login) {
             window.location.replace('sign-in.html');
         } else {
             location.reload(true);
@@ -87,7 +88,7 @@ window.onload = () => {
         window.setTimeout(
             function () {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
     });
     order_promise.then((myresponse) => {
         if (myresponse.order_no) {

@@ -17,7 +17,7 @@ describe('Change destination Page', () => {
         change_delivery(request_url);
         window.setTimeout(() => {
           resolve(myresponse);
-        }, 1000);
+        }, 2020);
       });
   
       signup_promise.then((myresponse) => {

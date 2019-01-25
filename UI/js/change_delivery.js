@@ -13,7 +13,7 @@ let fetch_order = () => {
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }
 
@@ -43,7 +43,7 @@ let change_delivery = (request_url)=>{
 
         setTimeout(() => {
             alert("No server Response! Check internet connectivity")
-        }, 950)
+        }, 2000)
     });
 }
 
@@ -55,7 +55,7 @@ document.getElementById("form_changeDelivery").onsubmit = (event) => {
         window.setTimeout(
             function () {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
     });
     delivery_promise.then((myresponse) => {
         if (myresponse.message.delivery_location) {
@@ -64,7 +64,7 @@ document.getElementById("form_changeDelivery").onsubmit = (event) => {
             alert(myresponse.message);
         } else if (myresponse.Error) {
             alert(myresponse.Error)
-        } else if(message.login) {
+        } else if(myresponse.login) {
             window.location.replace('sign-in.html');
         } else {
             location.reload(true);
@@ -80,7 +80,7 @@ window.onload = () => {
         window.setTimeout(
             function () {
                 resolve(myresponse);
-            }, 1000);
+            }, 2020);
     });
     order_promise.then((myresponse) => {
         if (myresponse.order_no) {

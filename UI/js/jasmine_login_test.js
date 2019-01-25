@@ -18,7 +18,7 @@ describe('Login Page', () => {
       login_user();
       window.setTimeout(() => {
         resolve(myresponse);
-      }, 1000);
+      }, 2020);
     });
 
     login_promise.then((myresponse) => {
