@@ -6,7 +6,7 @@ describe('View Profile Page', () => {
         fixture_html = $('#user_table')[0];
     });
 
-    it('should display change destination form', () => {
+    it('should display user information', () => {
         expect($('#user_name')[0]).toBeInDOM();
     });
 

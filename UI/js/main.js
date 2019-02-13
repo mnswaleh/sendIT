@@ -5,6 +5,8 @@ let params = new URLSearchParams(location.search);
 let access_token = localStorage.getItem('token') || "FDFAXAF&/SA/(AB>VAB";
 let user_info = localStorage.getItem('user') || [0, "user"];
 
+user_info = user_info.split(',');
+
 let myHeaders = new Headers();
 
 myHeaders.append("Content-Type", "application/json");
